@@ -1,0 +1,346 @@
+body {
+  background: linear-gradient(to bottom, #000000 0%, #250517 100%);
+}
+
+.navbar ul {
+  list-style-type: none;
+  overflow: auto;
+}
+
+.navbar li {
+  float: left;
+  padding: 6px 6px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: rgb(248, 244, 244);
+  font-size: 18px;
+  margin: 13px 20px;
+}
+
+.navbar li a:hover {
+  color: red;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid #6b3939;
+  background-color: #030303;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  margin-top: 20px;
+  /* Adjust margin top as needed */
+  margin-bottom: 20px;
+  /* Add margin at the bottom */
+}
+
+h3 {
+  text-align: center;
+  color: antiquewhite;
+  font-size: larger;
+}
+
+/* Button styles */
+td {
+  text-align: center;
+  padding: 6px 6px;
+}
+
+button {
+  padding: 8px 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #312d2d;
+  color: #f7f1f1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #580d0d;
+}
+
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  /* Calculate width with left and right margin */
+  margin: 5px;
+  /* Set margin around the input */
+  height: 65px;
+  padding: 10px;
+  border: 1px solid #910f0f;
+  border-radius: 5px;
+  font-size: 18px;
+  box-sizing: border-box;
+  /* Include padding and border in width calculation */
+}
+
+.calculator-form {
+  width: 70%;
+  /* Adjust the width of the form */
+  height: 70%;
+  /* Adjust the height of the form */
+  margin: 0 auto;
+  /* Center the form horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#zero,
+#Dzero {
+  background-color: rgb(30, 121, 124);
+  color: beige;
+}
+
+#Back,
+#AC,
+#Equal {
+  background-color: rgb(247, 102, 6);
+}
+
+/*BMI*/
+
+.container {
+  max-width: 400px;
+  margin: 180px auto;
+  padding: 20px;
+  margin-top: 150px;
+  background-color: azure;
+  border: 3px solid rgb(241, 54, 7);
+  border-radius: 6px;
+  box-shadow: 2px 6px 6px rgb(248, 121, 2);
+}
+
+h2 {
+  margin-top: 0;
+  color: #000000;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#bmiform {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container label {
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.container input[type="number"],
+select {
+  width: 95%;
+  padding: 10px;
+  border: none;
+  background-color: rgb(207, 203, 198);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.container input[type="number"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgb(255, 0, 0);
+
+}
+
+.container select {
+  width: 100%;
+}
+
+.container input[type="submit"] {
+  font-size: large;
+  font-weight: 600;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgb(0, 140, 255);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.container input[type="submit"]:hover {
+  background-color: rgb(6, 227, 243);
+}
+
+.container input[type="reset"] {
+  font-size: large;
+  font-weight: 600;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgb(0, 140, 255);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.container input[type="reset"]:hover {
+  background-color: rgb(6, 227, 243);
+}
+
+#result {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 20px;
+  color: rgb(3, 3, 3);
+}
+
+
+/*Loan calculator*/
+
+.container2 {
+  width: 600px;
+  height: 450px;
+  background-color: #5d92c4;
+  color: #FFFFFF;
+  padding: 35px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin: 180px auto;
+}
+
+.container2 h1 {
+  text-align: center;
+  color: #000000;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.wrapper div {
+  background-color: #580d0d;
+  padding: 12px;
+}
+
+.container2 input[type="number"] {
+  width: 100%;
+  height: 25px;
+  margin-top: -1px;
+  font-weight: 600;
+  border: none;
+}
+
+.container2 input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+.container2 h2 {
+  text-align: left;
+  color: #000000;
+  font-weight: 600;
+  margin-top: 40px;
+  text-decoration: none;
+  font-family: 'Verdana', Geneva, sans-serif;
+}
+
+.container2 h3 {
+  padding: 20px;
+  opacity: 0.4;
+  color: #030303;
+}
+
+/*Media querry*/
+@media only screen and (max-width: 768px) {
+  .calculator-form {
+    width: 90%;
+    height: 90%;
+  }
+  button {
+    padding: 3px 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 8px;
+    color: antiquewhite;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .container2 {
+    margin-top: -70px;
+    width: 75%;
+  }
+  .container2 input[type="number"] {
+    width: 100%;
+    height: 20px;
+    margin-top: -1px;
+    font-weight: 600;
+    border: none;
+  }
+  .container2 h2 {
+    text-align: left;
+    color: #4b0909;
+    font-weight: 600;
+    font-size: 2.5vh;
+    margin-top: 22px;
+    text-decoration: none;
+    font-family: 'Verdana', Geneva, sans-serif;
+  }
+  .container2 h3 {
+    padding: 10px;
+    opacity: 0.4;
+    font-size: 2vh;
+  }
+  .container2 h1 {
+    margin-top: -2px;
+    font-size: larger;
+    text-align: center;
+    color: #000000;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper div {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .container2 input[type="number"] {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-radius: 2px;
+    padding: 0px 0px;
+  }
+  .container2 p {
+    margin-bottom: 6px;
+  }
+  
+  .container{
+    width: 75%;
+    margin-top: 70px;
+  }
+}

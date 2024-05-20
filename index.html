@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#calci">Home</a></li>
+            <li><a href="#BMI">BMI Calculator</a></li>
+            <li><a href="#LoanCalculator">Loan Calculator</a></li>
+            <li><a href="about.asp">Love Calculator</a></li>
+        </ul>
+    </nav>
+
+    <form class="calculator-form" id="calci">
+        <table>
+            <tr>
+                <td colspan="8">
+                    <h3>Scientific Calculator</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="8"><input type="text" placeholder="000000" readonly id="finalV"></td>
+            </tr>
+            <tr>
+                <td><button type="button">Deg</button></td>
+                <td><button type="button">Gra</button></td>
+                <td><button type="button" onclick="FinalR('Log()')">LOG</button></td>
+                <td><button type="button" onclick="FinalR('&radic;')">SQURT</button></td>
+                <td><button type="button">CE</button></td>
+                <td><button type="button">AC</button></td>
+                <td><button type="button" onclick="FinalR('00')" id="Dzero">00</button></td>
+                <td><button type="button" onclick="FinalR('X')">*</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="FinalR('sin()')">Sin</button></td>
+                <td><button type="button" onclick="FinalR('arcsin()')">Sin<sup>-1</sup></button></td>
+                <td><button type="button" onclick="FinalR('&sup2')">X<sup>2</sup></button></td>
+                <td><button type="button" onclick="FinalR('Ln()')">Ln</button></td>
+                <td><button type="button" onclick="FinalR('7')" id="seven">7</button></td>
+                <td><button type="button" onclick="FinalR('8')" id="eight">8</button></td>
+                <td><button type="button" onclick="FinalR('9')" id="nine">9</button></td>
+                <td><button type="button" onclick="FinalR('&divide;')">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="FinalR('cos()')">Cos</button></td>
+                <td><button type="button" onclick="FinalR('arccos()')">Cos<sup>-1</sup></button></td>
+                <td><button type="button" onclick="FinalR('&sup3')">X<sup>3</sup></button></td>
+                <td><button type="button" onclick="FinalR('%')">%</button></td>
+                <td><button type="button" onclick="FinalR('4')" id="four">4</button></td>
+                <td><button type="button" onclick="FinalR('5')" id="five">5</button></td>
+                <td><button type="button" onclick="FinalR('6')" id="six">6</button></td>
+                <td><button type="button" onclick="FinalR('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="FinalR('tan()')">Tan</button></td>
+                <td><button type="button" onclick="FinalR('arctan()')">Tan<sup>-1</sup></button></td>
+                <td><button type="button" onclick="FinalR('')">X<sup>y</sup></button></td>
+                <td><button type="button" onclick="FinalR('(1/0)')">1/x</button></td>
+                <td><button type="button" onclick="FinalR('1')" id="one">1</button></td>
+                <td><button type="button" onclick="FinalR('2')" id="two">2</button></td>
+                <td><button type="button" onclick="FinalR('3')" id="three">3</button></td>
+                <td><button type="button" onclick="FinalR('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="FinalR('&lpar;')">(</button></td>
+                <td><button type="button" onclick="FinalR('&rpar;')">)</button></td>
+                <td><button type="button" onclick="FinalR('')">10<sup>x</sup></button></td>
+                <td><button type="button" onclick="FinalR('Ln')">Ln</button></td>
+                <td><button type="button" onclick="FinalR('.')" id="dot">.</button></td>
+                <td><button type="button" onclick="FinalR('0')" id="zero">0</button></td>
+                <td><button type="button" onclick="FinalR('π')">π</button></td>
+                <td><button type="button" onclick="FinalR('e')">e</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="FinalR('')">{</button></td>
+                <td><button type="button" onclick="FinalR('')">}</button></td>
+                <td><button type="button">e<sup>X</sup></button></td>
+                <td><button type="button">MOD</button></td>
+                <td><button type="button">[</button></td>
+                <td><button type="button">]</button></td>
+                <td><button type="button">EXP</button></td>
+                <td><button type="button">X!</button></td>
+            </tr>
+            <tr>
+                <td><button type="button">y√x</button></td>
+                <td><button type="button">3√x</button></td>
+                <td colspan="2"><button type="button" id="Back">Back</button></td>
+                <td colspan="2"><button type="button" onclick="ac()" id="AC">AC</button></td>
+                <td colspan="2"><button type="button" onclick="solve()" id="Equal">=</button></td>
+            </tr>
+            </tr>
+        </table>
+    </form>
+
+
+
+    <div class="container" id="BMI">
+        <h2>BMI Calculator</h2>
+        <form id="bmiform">
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option>Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age" required>
+            <label for="height-feet">Height:</label>
+            <input type="number" id="height-feet" placeholder="feet" required>
+            <input type="number" id="height-inches" placeholder="inches" required>
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" placeholder="Weight in KG" required>
+            <input type="submit" value="Calculate BMI">
+            <input type="Reset" value="Reset the value">
+        </form>
+        <div id="result"></div>
+    </div>
+
+
+    <div class="container2" id="LoanCalculator">
+        <h1>Loan Calculator</h1>
+        <div class="wrapper">
+            <div>
+                <p>Loan Amount (₹)</p>
+                <input id="amount" type="number" placeholder="EX.12501" required>
+            </div>
+            <div>
+                <p>Interest Rate (%)</p>
+                <input id="interest" type="number" placeholder="EX.11" required>
+            </div>
+            <div>
+                <p>Tenure (in months)</p>
+                <input id="tenure" type="number" placeholder="EX.24" required>
+            </div>
+        </div>
+        <h2 id="emi">EMI:</h2>
+        <h2 id="totalAmount">Total amount to pay:</h2>
+        <h2 id="totalInterest">Total interest to pay:</h2>
+        <h3>Click anywhere inside the box to calculate</h3>
+    </div>
+
+    <script>
+        document.getElementById("bmiform").addEventListener('submit', function (e) {
+            e.preventDefault();
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const heightfeet = document.getElementById('height-feet').value;
+            const heightinches = document.getElementById('height-inches').value;
+            const weight = document.getElementById('weight').value;
+
+            if (gender && age && heightfeet && heightinches && weight) {
+                const totalInches = parseInt(heightfeet) * 12 + parseInt(heightinches);
+                const height = totalInches * 0.0254;
+                const bmi = weight / (height * height);
+                const resultElement = document.getElementById('result');
+                let category = '';
+                if (bmi < 18.5) {
+                    category = 'Underweight';
+                } else if (bmi >= 18.5 && bmi <= 24.9) {
+                    category = 'Noraml';
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    category = 'Overweight';
+                } else {
+                    category = 'Obese';
+                }
+
+                let resultMessage = 'Your BMI is : ' + bmi.toFixed(2) + '<br>';
+                resultMessage += 'Category: ' + category;
+                resultElement.innerHTML = resultMessage;
+            }
+
+        });
+    </script>
+
+    <script>
+        window.onload = function () {
+            const formInputs = document.querySelectorAll("input");
+
+            formInputs.forEach(function (formInput) {
+                formInput.addEventListener('change', calculateLoan);
+            });
+        };
+
+        function calculateLoan() {
+            const loanPrincipal = document.querySelector('#amount').value;
+            const interestRate = document.querySelector('#interest').value;
+            const loanTenure = document.querySelector('#tenure').value;
+            const monthlyInterest = interestRate / 100 / 12;
+            const emi = loanPrincipal * monthlyInterest * Math.pow(1 + monthlyInterest, loanTenure) / (Math.pow(1 + monthlyInterest, loanTenure) - 1);
+
+            const totalAmount = emi * loanTenure;
+            const totalInterest = totalAmount - loanPrincipal;
+
+            document.querySelector('#emi').innerText = 'EMI: ₹' + emi.toFixed(2);
+            document.querySelector('#totalAmount').innerText = 'Total Amount to pay: ₹' + totalAmount.toFixed(2);
+            document.querySelector('#totalInterest').innerHTML = 'Total Interest to pay: ₹' + totalInterest.toFixed(2);
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var inputBox = document.getElementById('finalV');
+
+            function updateInput(value) {
+                inputBox.value += value;
+            }
+
+            function clearInput() {
+                inputBox.value = '';
+            }
+            var calculatorForm = document.getElementById('calci');
+            calculatorForm.addEventListener('click', function (event) {
+                if (event.target.tagName === 'BUTTON') {
+                    var clickedButton = event.target;
+                    var buttonValue = clickedButton.innerText;
+                    switch (buttonValue) {
+                        case '=':
+                            calculateResult();
+                            break;
+                        case 'AC':
+                            clearInput();
+                            break;
+                        case 'Back':
+                            inputBox.value = inputBox.value.slice(0, -1);
+                            break;
+                        case 'sin':
+                            result = Math.sin(angleInRadians);
+                            break;
+                        default:
+                            updateInput(buttonValue);
+                            break;
+                    }
+                }
+            });
+        });
+
+        function calculateResult() {
+            var inputBox = document.getElementById('finalV');
+            var result;
+
+            try {
+                result = eval(inputBox.value);
+            } catch (error) {
+                result = 'Error';
+            }
+            inputBox.value = result;
+        }
+        function FinalR(value) {
+            console.log('Button clicked:', value);
+        }
+        function calculatePowerOfTwo() {
+    let value = inputBox.value;
+    let number = parseFloat(value);
+
+    if (!isNaN(number)) {
+        let result = Math.pow(number, 2);
+        inputBox.value = result;
+    } else {
+        // Handle the case where the input is not a valid number
+        inputBox.value = 'Error';
+    }
+}
+    </script>
+
+
+
+
+
+</body>
+
+</html>
